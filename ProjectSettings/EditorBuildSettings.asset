@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/_Game/Scene/Game_Maxts.unity
+    guid: 8c42762243ead2348b6ae8259f456169
+  - enabled: 0
+    path: Assets/Plugins/MaxstARSamples/Scenes/ImageTracker.unity
+    guid: dabbdb77ad4d46e41bc01dd90e5d2008
   - enabled: 1
     path: Assets/_Game/Scene/Game.unity
-    guid: 8c42762243ead2348b6ae8259f456169
+    guid: f289f9fb58125b94aaffe792eaa7634e
   m_configObjects: {}
