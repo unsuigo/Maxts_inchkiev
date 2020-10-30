@@ -3,45 +3,50 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeProgressBar : MonoBehaviour
+namespace Game.UI
 {
-    [SerializeField] private Image _progressImage;
-    [SerializeField] private TextMeshProUGUI _secondsLeftText;
-    [SerializeField] private float _disabledAlpha;
-    [SerializeField] private string _secondsPrefix = "s";
-
-    private bool _lockedByLevel = false;
     
-    public float Progress { get; private set; }
-
-
-    public void SetProgress(float progress, int secondsLeft)
+    public class TimeProgressBar : MonoBehaviour
     {
-        _progressImage.fillAmount = 
-            Progress = progress;
+        [SerializeField] private Image _progressImage;
+        [SerializeField] private TextMeshProUGUI _secondsLeftText;
+        [SerializeField] private float _disabledAlpha;
+        [SerializeField] private string _secondsPrefix = "s";
 
-        var inProgress = float.Epsilon < progress;
+        private bool _lockedByLevel = false;
+    
+        public float Progress { get; private set; }
+
+
+        public void SetProgress(float progress, int secondsLeft)
+        {
+            _progressImage.fillAmount = 
+                Progress = progress;
+
+            var inProgress = float.Epsilon < progress;
         
-        // SetProgressEnabled(inProgress);
-        // SetImageFade(inProgress);
-        SetSecondsLeft(secondsLeft);
-    }
+            // SetProgressEnabled(inProgress);
+            // SetImageFade(inProgress);
+            SetSecondsLeft(secondsLeft);
+        }
 
-    public void SetProgressEnabled(bool isEnabled)
-    {
-        _secondsLeftText.gameObject.SetActive(isEnabled);
-    }
+        public void SetProgressEnabled(bool isEnabled)
+        {
+            _secondsLeftText.gameObject.SetActive(isEnabled);
+        }
     
-    private void SetImageFade(bool isDisabled)
-    {
-        _progressImage.DOFade(isDisabled
-            ? _disabledAlpha
-            : 1f, 
-            0f);
-    }
+        private void SetImageFade(bool isDisabled)
+        {
+            _progressImage.DOFade(isDisabled
+                    ? _disabledAlpha
+                    : 1f, 
+                0f);
+        }
     
-    private void SetSecondsLeft(int secondsLeft)
-    {
-        _secondsLeftText.text = $"{secondsLeft}{_secondsPrefix}";
+        private void SetSecondsLeft(int secondsLeft)
+        {
+            _secondsLeftText.text = $"{secondsLeft}{_secondsPrefix}";
+        }
     }
+   
 }

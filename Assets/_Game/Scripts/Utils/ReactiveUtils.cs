@@ -2,7 +2,7 @@
 using UniRx;
 using UniRx.Async;
 
-namespace ARRumzzy.Core.Utils
+namespace Game.Utils
 {
     public static class ReactiveUtils 
     {

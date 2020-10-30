@@ -1,11 +1,9 @@
 ﻿
-using System.Collections;
-using System.Collections.Generic;
 using UniRx.Async;
 using UnityEngine;
 
 
-namespace Game
+namespace Game.Utils
 {
     
     public static class AudioUtils

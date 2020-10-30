@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Mumi
+namespace Game.Utils
 {
     public class SingletonT<T> : MonoBehaviour where T : MonoBehaviour
     {
